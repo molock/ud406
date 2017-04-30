@@ -57,7 +57,6 @@ public class NinePatchDemo extends ApplicationAdapter {
         // TODO: Draw the platform texture at TEST_SIZE_2
         batch.draw(platform, 30, 0, TEST_SIZE_2, TEST_SIZE_2);
 
-
         // TODO: Draw the nine patch at TEST_SIZE_1
         ninePatch.draw(batch, 0, 50, TEST_SIZE_1, TEST_SIZE_1);
 
