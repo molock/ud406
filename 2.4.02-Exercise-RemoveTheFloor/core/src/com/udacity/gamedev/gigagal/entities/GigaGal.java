@@ -26,11 +26,14 @@ public class GigaGal {
     long walkStartTime;
     long jumpStartTime;
 
-    // TODO: Make the constructor take a spawn position
-    public GigaGal() {
+    // Make the constructor take a spawn position
+    public GigaGal(Platform platform) {
 
-        // TODO: Set position based on the supplied position
-        position = new Vector2(0, 0);
+        // Set position based on the supplied position
+
+        position = new Vector2(
+                platform.left + Constants.GIGAGAL_EYE_POSITION.x,
+                platform.top + Constants.GIGAGAL_EYE_POSITION.y);
 
         lastFramePosition = new Vector2(position);
         velocity = new Vector2();
@@ -47,12 +50,7 @@ public class GigaGal {
         if (jumpState != JumpState.JUMPING) {
             jumpState = JumpState.FALLING;
 
-            // TODO: Remove the ground!
-            if (position.y - Constants.GIGAGAL_EYE_HEIGHT < 0) {
-                jumpState = JumpState.GROUNDED;
-                position.y = Constants.GIGAGAL_EYE_HEIGHT;
-                velocity.y = 0;
-            }
+            // Remove the ground!
 
             for (Platform platform : platforms) {
                 if (landedOnPlatform(platform)) {

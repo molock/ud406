@@ -8,8 +8,8 @@ public class Platform {
 
 
     public Platform(float left, float top, float width, float height) {
-        // TODO: Populate the member variables
-    }
+            // TODO: Populate the member variables
+        }
 
     public void render(ShapeRenderer renderer) {
 
